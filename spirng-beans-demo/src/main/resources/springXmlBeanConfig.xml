@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd " >
+
+<!--    Spring 1.X - 2.5 版本前，Spring bean的管理采用纯xml配置的形式，-->
+<!--    这样的一个缺点是，一个项目无疑需要大量的bean配置-->
+
+<!--    自己封装的获取Bean的类，模拟最上层注入Bean， 以便调用方法-->
+    <bean id="myAppContext" class="cn.kerninventor.demos.springbeansdemo.config.MyAppContext"/>
+
+<!--    被注入类-->
+    <bean id="beInjection" class="cn.kerninventor.demos.springbeansdemo.lowlayer.BeInjection"/>
+
+<!--    不使用自动注入的xml配置方式 1 设置注入  需要在bean中定义一个要注入成员变量的set方法
+        name表示该类的成员变量名， ref 表示与该成员变量相同类型的bean，也就是要注入的bean， value 则可以对其中的一些基础数据类型赋值-->
+    <bean id="xmlSetInjectBean" class="cn.kerninventor.demos.springbeansdemo.highlayer.xml.XmlSetInjectBean">
+        <property name="beInjection" ref="beInjection"/>
+        <property name="value" value="'property标签的value属性注入的值'"/>
+    </bean>
+
+<!--    不使用自动注入的xml配置方式 2 构造注入 需要在bean中定于一个含参的构造函数 该参数是根据类型匹配bean的-->
+    <bean id="xmlConstructInjectBean" class="cn.kerninventor.demos.springbeansdemo.highlayer.xml.XmlConstructInjectBean">
+        <constructor-arg ref="beInjection"/>
+    </bean>
+
+<!--    自动注入的xml配置方式 1 根据类型设值注入  需要在bean中定义一个要注入成员变量的set方法-->
+    <bean id="xmlAutowireByTypeBean" class="cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.XmlAutowireByTypeBean"
+          autowire="byType"/>
+
+<!--    自动注入的xml配置方式 2 根据参数名设值注入  需要在bean中定义一个要注入成员变量的set方法,
+        同时注意参数命名应该与被注入成员变量在IOC容器中的beanName一致-->
+    <bean id="xmlAutowireByNameBean" class="cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.XmlAutowireByNameBean"
+          autowire="byName"/>
+
+<!--    自动注入的xml配置方式 3 根据构造注入  需要在bean中定义一个含要注入成员变量参数的构造方法 该参数是根据类型匹配bean的-->
+    <bean id="xmlAutowireByConstructBean" class="cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.XmlAutowireByConstructBean"
+          autowire="constructor"/>
+
+</beans>
