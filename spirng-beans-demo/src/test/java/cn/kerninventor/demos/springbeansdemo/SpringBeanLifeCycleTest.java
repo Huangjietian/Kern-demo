@@ -1,6 +1,7 @@
 package cn.kerninventor.demos.springbeansdemo;
 
-import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.annotation.IAutowireService;
+import cn.kerninventor.demos.springbeansdemo.beanslifecycle.annotation.AnnotationDemo;
+import cn.kerninventor.demos.springbeansdemo.beanslifecycle.xml.XmlDemo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,23 +9,25 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 /**
- * @Title: SpringAnnnotationConfigTest
+ * @Title: SpringBeanLifeCycleTest
  * @ProjectName demos
  * @Version 1.1.0.RELEASE
  * @Description: TODO
  * @Author Kern
- * @Date 2019/11/6 17:06
+ * @Date 2019/11/6 18:00
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath*:beaninjection/springAnnotationBeanConfig.xml")
-public class SpringAnnnotationConfigTest {
+@ContextConfiguration(locations = "classpath*:beanlifecycle/springLifeCycleConfig.xml")
+public class SpringBeanLifeCycleTest {
 
     @Autowired
-    private IAutowireService autowireService;
+    private AnnotationDemo annotationDemo;
+
+    @Autowired
+    private XmlDemo xmlDemo;
 
     @Test
     public void test() {
-        autowireService.print("@Autowired @Component + xml 配置 component-scan 实现注入 =============");
-    }
 
+    }
 }

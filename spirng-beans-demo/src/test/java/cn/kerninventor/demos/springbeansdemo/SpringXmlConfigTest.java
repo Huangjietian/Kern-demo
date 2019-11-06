@@ -1,11 +1,11 @@
 package cn.kerninventor.demos.springbeansdemo;
 
-import cn.kerninventor.demos.springbeansdemo.config.MyAppContext;
-import cn.kerninventor.demos.springbeansdemo.highlayer.xml.IXmlConstructInjectBean;
-import cn.kerninventor.demos.springbeansdemo.highlayer.xml.IXmlSetInjectBean;
-import cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.IXmlAutowireByConstructBean;
-import cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.IXmlAutowireByNameBean;
-import cn.kerninventor.demos.springbeansdemo.highlayer.xml.autowire.IXmlAutowireByTypeBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.config.MyAppContext;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.xml.IXmlConstructInjectBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.xml.IXmlSetInjectBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.xml.autowire.IXmlAutowireByConstructBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.xml.autowire.IXmlAutowireByNameBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.xml.autowire.IXmlAutowireByTypeBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -20,7 +20,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * @Date 2019/11/6 14:09
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = "classpath*:springXmlBeanConfig.xml")
+@ContextConfiguration(locations = "classpath*:beaninjection/springXmlBeanConfig.xml")
 public class SpringXmlConfigTest {
 
     private IXmlSetInjectBean xmlSetInjectBean;

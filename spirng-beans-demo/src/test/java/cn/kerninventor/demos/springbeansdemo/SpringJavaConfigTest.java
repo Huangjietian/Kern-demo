@@ -1,8 +1,8 @@
 package cn.kerninventor.demos.springbeansdemo;
 
-import cn.kerninventor.demos.springbeansdemo.highlayer.annotation.IAutowireService;
-import cn.kerninventor.demos.springbeansdemo.highlayer.javaConfig.ContextConfig;
-import cn.kerninventor.demos.springbeansdemo.highlayer.javaConfig.IJavaConfigBean;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.annotation.IAutowireService;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.javaConfig.ContextConfig;
+import cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.javaConfig.IJavaConfigBean;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
