@@ -9,11 +9,11 @@
 
 <!--    Spring 2.5 版本，引入了 @Autowired @Component注解集 以及 component-scan 组件扫描
         使用Xml和注解相结合的方式  进一步简化了配置-->
-    <context:component-scan base-package="cn.kerninventor.demos.springbeansdemo.beansinjection.highlayer.annotation" />
+    <context:component-scan base-package="cn.kerninventor.demos.springsingtondemo.beansinjection.highlayer.annotation" />
 <!--    FIXME REMARK1 由于这个类不在我们指定的包下,定义多个组件扫描也是可取的-->
-<!--    <context:component-scan base-package="cn.kerninventor.demos.springbeansdemo.beansinjection.lowlayer"/>-->
+<!--    <context:component-scan base-package="cn.kerninventor.demos.springsingtondemo.beansinjection.lowlayer"/>-->
 <!--    FIXME REMARK1 或者直接写<bean> 也可以实现这个目的-->
-    <bean id="beInjection" class="cn.kerninventor.demos.springbeansdemo.beansinjection.lowlayer.BeInjection"/>
+    <bean id="beInjection" class="cn.kerninventor.demos.springsingtondemo.beansinjection.lowlayer.BeInjection"/>
 
 
 </beans>
