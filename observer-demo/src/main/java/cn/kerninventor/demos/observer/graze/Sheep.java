@@ -1,0 +1,24 @@
+package cn.kerninventor.demos.observer.graze;
+
+/**
+ * @Title: Sheep
+ * @ProjectName demos
+ * @PackageName cn.kerninventor.demos.observer.graze
+ * @Author Kern
+ * @Date 2019/12/11 13:00
+ * @Description: TODO
+ */
+public class Sheep extends Grazer {
+
+    public Sheep(int count) {
+        super(count);
+    }
+
+    public void browseOn() {
+        System.out.println("The sheeps is going to pasture");
+    }
+
+    public void backToTheFence() {
+        System.out.println("The sheeps back to the fence");
+    }
+}

@@ -12,6 +12,7 @@
         <module>spirng-beans-demo</module>
         <module>spring-sington-demo</module>
         <module>decorator-demo</module>
+        <module>observer-demo</module>
     </modules>
 
 
