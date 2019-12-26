@@ -1,10 +1,5 @@
-package cn.kerninventor.multithreaddemo.controller;
+package cn.kerninventor.multithreaddemo.countDownDemo.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.transaction.jta.TransactionFactory;
-
-import javax.annotation.Resource;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingDeque;

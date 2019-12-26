@@ -1,13 +1,10 @@
-package cn.kerninventor.multithreaddemo.multithreadutil;
+package cn.kerninventor.multithreaddemo.countDownDemo.multithreadutil;
 
-import cn.kerninventor.multithreaddemo.dao.TestBillDAO;
-import cn.kerninventor.multithreaddemo.entity.TestBill;
+import cn.kerninventor.multithreaddemo.countDownDemo.dao.TestBillDAO;
+import cn.kerninventor.multithreaddemo.countDownDemo.entity.TestBill;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.TransactionManager;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
-import org.springframework.transaction.jta.TransactionFactory;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.CountDownLatch;
@@ -15,7 +12,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * @Title SaveBillTask
  * @ProjectName Kern-demo
- * @PackageName cn.kerninventor.multithreaddemo.multithreadutil
+ * @PackageName cn.kerninventor.multithreaddemo.countDownDemo.multithreadutil
  * @Author Kern
  * @Date 2019/12/24 15:59
  * @Description TODO
