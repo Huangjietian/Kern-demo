@@ -14,6 +14,7 @@ public abstract class Grazer {
 
     public Grazer(int count) {
         this.count = count;
+        Pastoralist.attach(this);
     }
 
     //数量
