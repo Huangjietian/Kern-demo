@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.kerninventor.multithreaddemo.countDownDemo.dao.TestBillDAO">
+
+    <insert id="save" parameterType="cn.kerninventor.multithreaddemo.countDownDemo.entity.TestBill">
+        INSERT INTO
+        test_bill (uuid)
+        VALUES
+        (#{uuid})
+    </insert>
+
+    <insert id="saveBatch" parameterType="java.util.List">
+        INSERT INTO
+        test_bill (uuid)
+        VALUES
+        <foreach collection="list" item="bill"  separator=",">
+            (#{bill.uuid})
+        </foreach>
+    </insert>
+
+
+</mapper>
