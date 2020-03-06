@@ -1,7 +1,6 @@
-package cn.kerninventor.websocketdemo.handler;
+package cn.kerninventor.websocketdemo.springwshandler;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.socket.WebSocketHandler;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
@@ -16,14 +15,14 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
  */
 @Configuration
 @EnableWebSocket
-public class WebSocketConfig implements WebSocketConfigurer {
+public class WebSocketConfigHd implements WebSocketConfigurer {
 
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry webSocketHandlerRegistry) {
-        webSocketHandlerRegistry.addHandler(refreshPageWsServer(), "/ws/refresh");
+        webSocketHandlerRegistry.addHandler(refreshPageWsServer(), "/ws/handler/{gameCode}");
     }
 
-    public WebSocketHandler refreshPageWsServer(){
-        return new RefreshPageWsHandler();
+    public org.springframework.web.socket.WebSocketHandler refreshPageWsServer(){
+        return new WebSocketHandler();
     }
 }
