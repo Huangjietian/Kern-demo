@@ -15,7 +15,6 @@
         <module>decorator-demo</module>
         <module>observer-demo</module>
         <module>web-socket-demo</module>
-        <module>spring-logger-demo</module>
     </modules>
 
 
