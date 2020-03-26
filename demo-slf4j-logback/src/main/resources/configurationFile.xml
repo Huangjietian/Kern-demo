@@ -1,0 +1,22 @@
+<configuration>
+<!--    0-N个-->
+    <appender name="" class="">
+        <!--    1个-->
+        <encoder>
+            <!--    1个-->
+            <pattern></pattern>
+        </encoder>
+    </appender>
+
+<!--    0-N个-->
+    <logger name="">
+
+    </logger>
+
+<!--    1个-->
+    <root level="">
+        <!--    0-N个-->
+        <appender-ref ref="" />
+    </root>
+
+</configuration>
