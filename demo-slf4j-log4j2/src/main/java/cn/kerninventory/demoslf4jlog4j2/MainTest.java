@@ -12,6 +12,6 @@ public class MainTest {
 
     public static void main(String[] args) {
         Logger logger = LoggerFactory.getLogger(MainTest.class);
-        logger.info("HELLO LOG4J2");
+        logger.error("HELLO LOG4J2");
     }
 }
