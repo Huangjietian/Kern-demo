@@ -16,7 +16,7 @@
         <module>observer-demo</module>
         <module>web-socket-demo</module>
         <module>demo-serviceloader</module>
-
+        <module>demo-datatype</module>
     </modules>
 
 
