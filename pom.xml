@@ -17,6 +17,8 @@
         <module>web-socket-demo</module>
         <module>demo-serviceloader</module>
         <module>demo-datatype</module>
+        <module>demo-java8api-stream</module>
+        <module>demo-spring-security</module>
     </modules>
 
 
