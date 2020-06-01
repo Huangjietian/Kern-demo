@@ -2,9 +2,11 @@ package cn.kerninventory.demos.spring.security.mapper;
 
 import cn.kerninventory.demos.spring.security.model.TestUser;
 import cn.kerninventory.demos.spring.security.model.TestUserExample;
-import java.util.List;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+@Mapper
 public interface TestUserMapper {
     long countByExample(TestUserExample example);
 

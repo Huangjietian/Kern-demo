@@ -1,11 +1,14 @@
 package cn.kerninventory.demos.spring.security.web.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 /**
  * @author Kern
@@ -37,11 +40,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
+    @Autowired
+    private MyUserDetailsService userDetailsService;
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         /**
          * 它将单个用户设置在内存中。该用户的用户名为“user”，密码为“password”，角色为“USER”。
          */
+        PasswordEncoderFactories.createDelegatingPasswordEncoder();
 
         auth
                 //存储在内存中
@@ -51,6 +58,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //添加用户
                 .withUser("user").password(new BCryptPasswordEncoder().encode("123456")).roles("USER")
         ;
+
+        auth.userDetailsService(userDetailsService).passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
 
 }
