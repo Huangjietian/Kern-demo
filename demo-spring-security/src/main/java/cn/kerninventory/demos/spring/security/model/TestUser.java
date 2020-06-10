@@ -1,12 +1,16 @@
 package cn.kerninventory.demos.spring.security.model;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 public class TestUser {
+
     private Long id;
 
+    @NotBlank
     private String username;
 
+    @NotBlank
     private String password;
 
     private Date createTime;

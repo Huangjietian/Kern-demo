@@ -1,6 +1,6 @@
 package cn.kerninventory.demo.serviceloader;
 
-import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.ServiceLoader;
 
@@ -10,8 +10,7 @@ import java.util.ServiceLoader;
  * @description TODO
  */
 public class MainTest {
-    public static void main(String[] args) {
-        ServiceLoader.loadInstalled(MyService.class);
+    public static void main(String[] args) throws IOException {
         ServiceLoader<MyService> myServices = ServiceLoader.load(MyService.class);
         Iterator<MyService> iterator = myServices.iterator();
         while (iterator.hasNext()) {
