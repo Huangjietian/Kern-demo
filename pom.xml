@@ -19,6 +19,7 @@
         <module>demo-datatype</module>
         <module>demo-java8api-stream</module>
         <module>demo-spring-security</module>
+        <module>demo-algorithm</module>
     </modules>
 
 
