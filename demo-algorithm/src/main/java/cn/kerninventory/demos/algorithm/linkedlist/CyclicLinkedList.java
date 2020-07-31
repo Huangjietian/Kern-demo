@@ -1,45 +1,45 @@
 package cn.kerninventory.demos.algorithm.linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
 /**
- * <h1>单项链表</h1>
- * <p>
- *
- * </p>
+ * <h1>中文注释</h1>
+ * <p>一句话描述</p>
  *
  * @author Kern
  * @version 1.0
  */
-public class LinkedList implements Linked {
+public class CyclicLinkedList extends LinkedList {
 
-    protected Node head;
-    protected Node tail;
-    protected int size;
+    public static <R> List<R> cyclicOperateElementBy(Node node, Function<Node, R> function) {
+        Node initialPosition = node;
+        List<R> rList = new ArrayList<>(16);
+        while (node != null) {
+            rList.add(function.apply(node));
+            node = node.nextNode;
+            if (node.equals(initialPosition)) {
+                node = null;
+            }
+        }
+        return rList;
+    }
 
     @Override
     public Node pop() {
-        if (size == 0)
-            return null;
-
-        Node headNode = head;
-        head = headNode.nextNode;
-        headNode.nextNode = null;
-        size --;
-
-        if (size == 0)
-            tail = null;
-        return headNode;
+        Node node = super.pop();
+        if (tail != null && !tail.equals(head))
+            tail.nextNode = head;
+        return node;
     }
 
     @Override
     public void append(Node node) {
-        node.nextNode = null;
-        if (head == null) {
-            head = node;
-        } else {
-            tail.nextNode = node;
+        super.append(node);
+        if (size > 1) {
+            tail.nextNode = head;
         }
-        tail = node;
-        size ++;
     }
 
     @Override
@@ -61,8 +61,12 @@ public class LinkedList implements Linked {
                 if (n2.equals(node)) {
                     Node n3 = node.nextNode;
                     node.nextNode = null;
-                    if (n2.equals(tail))
+                    //此处需要重新维护tail的next引用
+                    if (n2.equals(tail)) {
                         tail = n1;
+                        if (!tail.equals(head))
+                            tail.nextNode = head;
+                    }
                     n1.nextNode = n3;
 
                     size --;
@@ -71,12 +75,6 @@ public class LinkedList implements Linked {
                 }
             }
         }
-
-    }
-
-    @Override
-    public int size() {
-        return size;
     }
 
     @Override
@@ -86,8 +84,10 @@ public class LinkedList implements Linked {
         while (node != null) {
             builder.append(" -> " + node.toString() + "[" + size + "]");
             node = node.nextNode;
+            //避免死循环
+            if (head.equals(node))
+                node = null;
         }
         System.out.println(builder.toString());
     }
-
 }

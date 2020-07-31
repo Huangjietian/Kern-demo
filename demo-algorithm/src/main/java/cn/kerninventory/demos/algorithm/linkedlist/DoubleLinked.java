@@ -11,7 +11,7 @@ public interface DoubleLinked extends Linked {
 
     void appendFront(Node node);
 
-    void removeFront();
+    Node removeFront();
 
-    void removeBack();
+    Node removeBack();
 }

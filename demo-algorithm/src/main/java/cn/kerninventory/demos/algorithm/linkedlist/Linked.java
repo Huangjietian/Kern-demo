@@ -9,6 +9,9 @@ package cn.kerninventory.demos.algorithm.linkedlist;
  */
 public interface Linked {
 
+    //访问第一个元素
+    Node pop();
+
     void append(Node node);
 
     void remove(Node node);
