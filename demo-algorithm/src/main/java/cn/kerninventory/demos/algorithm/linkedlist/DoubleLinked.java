@@ -9,6 +9,8 @@ package cn.kerninventory.demos.algorithm.linkedlist;
  */
 public interface DoubleLinked extends Linked {
 
+    Node invertedPop();
+
     void appendFront(Node node);
 
     Node removeFront();

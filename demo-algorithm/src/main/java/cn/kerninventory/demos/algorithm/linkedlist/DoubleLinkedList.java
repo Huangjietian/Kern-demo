@@ -16,6 +16,11 @@ public class DoubleLinkedList implements DoubleLinked {
     protected int size;
 
     @Override
+    public Node invertedPop() {
+        return removeBack();
+    }
+
+    @Override
     public void appendFront(Node node) {
         if (head == null) {
             head = node;
