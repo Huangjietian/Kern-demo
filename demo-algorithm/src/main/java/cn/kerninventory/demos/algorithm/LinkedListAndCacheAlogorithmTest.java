@@ -16,7 +16,7 @@ import java.util.List;
  * @author Kern
  * @version 1.0
  */
-public class MainTest {
+public class LinkedListAndCacheAlogorithmTest {
 
     public static void main(String[] args) {
         oneWay();
