@@ -2,7 +2,6 @@ package cn.kerninventory.demos.socket;
 
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.InetAddress;
 import java.net.Socket;
 
 /**
@@ -14,23 +13,21 @@ import java.net.Socket;
  */
 public class LqSocketSender {
 
-    public static void main(String[] args) throws IOException {
-        for (int i = 0 ; i < 1000 ; i ++) {
-            final int index = i;
-            new Thread(() -> {
-                try {
-                    Socket socket = new Socket(InetAddress.getLocalHost(), 6000);
-                    OutputStream os = socket.getOutputStream();
-                    String message = "你好" + index;
-                    os.write(message.getBytes("UTF-8"));
-                    os.flush();
-                    socket.shutdownInput();
-                    socket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }).start();
+    public static void main(String[] args) throws IOException, InterruptedException {
+        for (int j = 0 ; j < 1 ; j ++) {
+            for (int i = 0 ; i < 1 ; i ++) {
+                final int index = i;
+                Socket socket = new Socket("172.20.2.48", 6000);
+                OutputStream os = socket.getOutputStream();
+                String message = "FPSTART,188,PScoreT,C,男,组,男子组5000米第1组,决赛,1,1,2020-08-03 17:03:45.673,5, 13,红色组,255,备注1,备注2,备注3,{1,5,6,魏仁杰,男,实验学校,0,f106c6140000000000000000,,{1,1:53.57,20200803170539234,0,备注1,备注2,备注3}},FPEND";
+                os.write(message.getBytes("UTF-8"));
+                os.flush();
+                socket.shutdownInput();
+                socket.close();
+            }
+            Thread.sleep(3000L);
         }
+
 
 
     }
