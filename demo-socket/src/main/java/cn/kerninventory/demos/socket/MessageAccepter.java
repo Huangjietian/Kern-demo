@@ -18,11 +18,10 @@ public class MessageAccepter {
 
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(6000);
-        Socket socket;
+        ServerSocket serverSocket = new ServerSocket(6001);
         int count = 0;
         while (true) {
-            socket = serverSocket.accept();
+            Socket socket = serverSocket.accept();
             InputStream is = socket.getInputStream();
 
             //防止因网络异常导致的空读
@@ -38,7 +37,7 @@ public class MessageAccepter {
             byte[] bytes = new byte[available];
             is.read(bytes, 0, available);
             String message = new String(bytes, "UTF-8");
-            System.out.println("收到消息[" + (++count) + "] ->" + message + "  Client: " + socket.getLocalAddress().getHostAddress() + socket.getLocalPort());
+            System.out.println("收到消息[" + (++count) + "] ->" + message);
 
             //关闭流
             socket.shutdownInput();
