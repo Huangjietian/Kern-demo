@@ -18,10 +18,14 @@ public class MessageAccepter {
 
 
     public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(6001);
+        ServerSocket serverSocket = new ServerSocket(6000);
         int count = 0;
         while (true) {
+            System.out.println("");
             Socket socket = serverSocket.accept();
+            if (!"172.20.2.18".equalsIgnoreCase(socket.getInetAddress().getHostAddress())) {
+                continue;
+            }
             InputStream is = socket.getInputStream();
 
             //防止因网络异常导致的空读
