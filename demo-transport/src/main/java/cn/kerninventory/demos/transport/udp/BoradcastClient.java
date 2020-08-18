@@ -1,11 +1,11 @@
-package cn.kerninventory.demos.socket;
+package cn.kerninventory.demos.transport.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-class BoradcastClient{
+public class BoradcastClient{
 
 
     public static void main(String[] args)throws IOException {

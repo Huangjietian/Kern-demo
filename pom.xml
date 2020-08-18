@@ -20,7 +20,7 @@
         <module>demo-java8api-stream</module>
         <module>demo-spring-security</module>
         <module>demo-algorithm</module>
-        <module>demo-socket</module>
+        <module>demo-transport</module>
     </modules>
 
     <build>

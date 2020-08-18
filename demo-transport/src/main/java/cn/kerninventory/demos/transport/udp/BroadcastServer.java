@@ -1,10 +1,10 @@
-package cn.kerninventory.demos.socket;
+package cn.kerninventory.demos.transport.udp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 
-class BoradcastServer {
+public class BroadcastServer {
 
     public static void main(String[] args) throws IOException {
 

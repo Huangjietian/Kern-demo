@@ -1,4 +1,4 @@
-package cn.kerninventory.demos.socket;
+package cn.kerninventory.demos.transport.tcp;
 
 import java.io.IOException;
 import java.io.InputStream;
