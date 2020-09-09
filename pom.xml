@@ -9,20 +9,6 @@
     <version>1.0.SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <modules>
-        <module>spirng-beans-demo</module>
-        <module>spring-sington-demo</module>
-        <module>decorator-demo</module>
-        <module>observer-demo</module>
-        <module>web-socket-demo</module>
-        <module>demo-serviceloader</module>
-        <module>demo-datatype</module>
-        <module>demo-java8api-stream</module>
-        <module>demo-spring-security</module>
-        <module>demo-algorithm</module>
-        <module>demo-transport</module>
-    </modules>
-
     <build>
         <plugins>
             <plugin>
